@@ -6,10 +6,10 @@
 <div class="widewrapper main">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 blog-main">
+            <div class="col-md-12 blog-main">
                 <th:block th:if="${null != blogPageResult}">
                     <th:block th:each="blog,iterStat : ${blogPageResult.list}">
-                        <div class="col-md-6 col-sm-6 blog-main-card">
+                        <div class="col-md-4 col-sm-6 blog-main-card">
                             <article class="blog-summary">
                                 <header>
                                     <a th:href="@{'/blog/' + ${blog.blogId}}">
@@ -37,7 +37,7 @@
                     </th:block>
                 </th:block>
                 <th:block th:if="${null != blogPageResult}">
-                    <ul class="blog-pagination">
+                    <ul class="blog-pagination col-md-12">
                         <li th:class="${blogPageResult.currPage==1}?'disabled' : ''"><a
                                 th:href="@{${blogPageResult.currPage==1}?'##':'/page/' + ${blogPageResult.currPage-1}}">&laquo;</a>
                         </li>
@@ -66,56 +66,56 @@
                     </ul>
                 </th:block>
             </div>
-            <aside class="col-md-4 blog-aside">
-                <div class="aside-widget">
-                    <header>
-                        <h3>点击最多</h3>
-                    </header>
-                    <div class="body">
-                        <ul class="clean-list">
-                            <th:block th:if="${null != hotBlogs}">
-                                <th:block th:each="hotBlog : ${hotBlogs}">
-                                    <li><a th:href="@{'/blog/' + ${hotBlog.blogId}}">
-                                        <th:block th:text="${hotBlog.blogTitle}"></th:block>
-                                    </a></li>
-                                </th:block>
-                            </th:block>
-                        </ul>
-                    </div>
-                </div>
-                <div class="aside-widget">
-                    <header>
-                        <h3>最新发布</h3>
-                    </header>
-                    <div class="body">
-                        <ul class="clean-list">
-                            <th:block th:if="${null != newBlogs}">
-                                <th:block th:each="newBlog : ${newBlogs}">
-                                    <li><a th:href="@{'/blog/' + ${newBlog.blogId}}">
-                                        <th:block th:text="${newBlog.blogTitle}"></th:block>
-                                    </a></li>
-                                </th:block>
-                            </th:block>
-                        </ul>
-                    </div>
-                </div>
-                <div class="aside-widget">
-                    <header>
-                        <h3>标签栏</h3>
-                    </header>
-                    <div class="body clearfix">
-                        <ul class="tags">
-                            <th:block th:if="${null != hotTags}">
-                                <th:block th:each="hotTag : ${hotTags}">
-                                    <li><a th:href="@{'/tag/' + ${hotTag.tagName}}">
-                                        <th:block th:text="${hotTag.tagName}+'('+${hotTag.tagCount}+')'"></th:block>
-                                    </a></li>
-                                </th:block>
-                            </th:block>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
+<!--            <aside class="col-md-4 blog-aside">-->
+<!--                <div class="aside-widget">-->
+<!--                    <header>-->
+<!--                        <h3>点击最多</h3>-->
+<!--                    </header>-->
+<!--                    <div class="body">-->
+<!--                        <ul class="clean-list">-->
+<!--                            <th:block th:if="${null != hotBlogs}">-->
+<!--                                <th:block th:each="hotBlog : ${hotBlogs}">-->
+<!--                                    <li><a th:href="@{'/blog/' + ${hotBlog.blogId}}">-->
+<!--                                        <th:block th:text="${hotBlog.blogTitle}"></th:block>-->
+<!--                                    </a></li>-->
+<!--                                </th:block>-->
+<!--                            </th:block>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="aside-widget">-->
+<!--                    <header>-->
+<!--                        <h3>最新发布</h3>-->
+<!--                    </header>-->
+<!--                    <div class="body">-->
+<!--                        <ul class="clean-list">-->
+<!--                            <th:block th:if="${null != newBlogs}">-->
+<!--                                <th:block th:each="newBlog : ${newBlogs}">-->
+<!--                                    <li><a th:href="@{'/blog/' + ${newBlog.blogId}}">-->
+<!--                                        <th:block th:text="${newBlog.blogTitle}"></th:block>-->
+<!--                                    </a></li>-->
+<!--                                </th:block>-->
+<!--                            </th:block>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="aside-widget">-->
+<!--                    <header>-->
+<!--                        <h3>标签栏</h3>-->
+<!--                    </header>-->
+<!--                    <div class="body clearfix">-->
+<!--                        <ul class="tags">-->
+<!--                            <th:block th:if="${null != hotTags}">-->
+<!--                                <th:block th:each="hotTag : ${hotTags}">-->
+<!--                                    <li><a th:href="@{'/tag/' + ${hotTag.tagName}}">-->
+<!--                                        <th:block th:text="${hotTag.tagName}+'('+${hotTag.tagCount}+')'"></th:block>-->
+<!--                                    </a></li>-->
+<!--                                </th:block>-->
+<!--                            </th:block>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </aside>-->
         </div>
     </div>
 </div>
